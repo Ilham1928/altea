@@ -20,7 +20,7 @@ Route.group(() => {
 
 	// User routes
 	Route.get('user', 'User/UserController.index')
-	// Route.get('user', 'User/UserController.index')
+	Route.post('user/create', 'User/UserCreateController.index').validator('User/UserCreate')
 	// Route.get('user', 'User/UserController.index')
 	// Route.get('user', 'User/UserController.index')
 	// Route.get('user', 'User/UserController.index')

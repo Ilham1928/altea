@@ -1,6 +1,6 @@
 'use strict'
 
-class UserUserUpdate {
+class UserUpdate {
   get rules () {
     return {
       // validation rules
@@ -8,4 +8,4 @@ class UserUserUpdate {
   }
 }
 
-module.exports = UserUserUpdate
+module.exports = UserUpdate

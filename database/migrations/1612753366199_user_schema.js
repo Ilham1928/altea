@@ -10,9 +10,9 @@ class UserSchema extends Schema {
 			table.string('username')
 			table.string('email').unique()
 			table.string('password')
-			table.string('photo')
-      table.text('about')
-			table.timestamp('deleted_at')
+			table.string('photo').nullable()
+      table.text('about').nullable()
+			table.timestamp('deleted_at').nullable()
       table.timestamps()
     })
   }
