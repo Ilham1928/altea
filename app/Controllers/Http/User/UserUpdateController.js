@@ -89,7 +89,7 @@ class UserUpdateController {
 		return await User
 			.query()
 			.select(
-				'user_id',
+				'user_id as __id',
 				'username',
 				'email',
 				'about',

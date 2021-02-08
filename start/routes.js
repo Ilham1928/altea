@@ -20,9 +20,9 @@ Route.group(() => {
 
 	// User routes
 	Route.get('user', 'User/UserController.index')
+	Route.get('user/detail', 'User/UserDetailController.index').validator('User/UserDetail')
 	Route.post('user/create', 'User/UserCreateController.index').validator('User/UserCreate')
 	Route.post('user/update', 'User/UserUpdateController.index').validator('User/UserUpdate')
-	// Route.get('user', 'User/UserController.index')
 	Route.delete('user/delete', 'User/UserDeleteController.index').validator('User/UserDelete')
 
 
