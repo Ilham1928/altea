@@ -4,6 +4,11 @@
 const Model = use('Model')
 
 class User extends Model {
+	static boot () {
+    super.boot()
+
+    this.addTrait('@provider:Lucid/SoftDeletes')
+  }
 
 	static get primaryKey () {
     return 'user_id'

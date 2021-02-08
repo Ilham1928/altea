@@ -12,25 +12,25 @@ class UserCreateController {
 			const trx = await Database.beginTransaction()
 
 			try {
-				let store = await this.data(request, trx)
+				let store = await this.process(request, trx)
 
 				return response.status(200).json({
-					code: 200,
-					message: 'Ok',
-					data: {}
+					'code': 200,
+					'message': 'Ok',
+					'data': {}
 				})
 			} catch (e) {
 				await trx.rollback()
 
-				return response.status(500).json({
-					code: 500,
-					message: 'Something Wrong',
-					data: e.message
+				return response.status(200).json({
+					'code': 500,
+					'message': 'Something Wrong',
+					'data': e.message
 				})
 			}
     }
 
-    async data(request, trx)
+    async process(request, trx)
     {
 			await User.create({
 				username: request.input('username'),

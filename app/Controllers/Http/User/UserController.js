@@ -9,36 +9,36 @@ class UserController {
     async index({request, response})
 		{
 			try {
-				let user = await this.data(request)
+				let data = await this.process(request)
 
-				if (user) {
+				if (data.rows.length > 0) {
 					return response.status(200).json({
-						code: 200,
-						message: 'Ok',
-						data: user
+						'code': 200,
+						'message': 'Ok',
+						'data': data
 					})
 				}else{
-					return response.status(204).json({
-						code: 204,
-						message: 'No Content',
-						data: []
+					return response.status(200).json({
+						'code': 204,
+						'message': 'No Content',
+						'data': []
 					})
 				}
 			} catch (e) {
-				return response.status(500).json({
-					code: 500,
-					message: 'Something Wrong',
-					data: e.message
+				return response.status(200).json({
+					'code': 500,
+					'message': 'Something Wrong',
+					'data': e.message
 				})
 			}
     }
 
-		async data(request)
+		async process(request)
 		{
-			let url = Env.get('APP_URL')
 			return await User
 				.query()
 				.select(
+          'user_id',
 					'username',
 					'email',
 					'about',
@@ -50,7 +50,7 @@ class UserController {
 				)
 				.paginate(request.input('page') ?? 1, 10)
 		}
-		
+
 }
 
 module.exports = UserController

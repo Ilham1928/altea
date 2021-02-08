@@ -13,7 +13,7 @@ class UserCreate {
   }
 
   get messages () {
-			return {
+		return {
       'username.required': 'Username cannot be blank',
       'email.required': 'Email cannot be blank',
 			'email.unique': 'This email was exists in database',
@@ -29,7 +29,7 @@ class UserCreate {
   }
 
 	async fails (errorMessage) {
-    return this.ctx.response.status(422).json({
+    return this.ctx.response.status(200).json({
 			code: 422,
 			message: errorMessage[0].message,
 			data: {}
