@@ -1,28 +1,19 @@
-# Adonis API application
+1. Application Environment
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+	| App | Version |
+	|--|--|
+	| Node.js | 14.15.4 |
+	| npm| 6.14.10 |
+	| Adonis.js | 4.1.0 |
+	| Database (MariaDB) | 10.4.17 |
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+2. How to run
+	- Clone from this repository
+	- Duplicate **.env.example** become **.env**
+	- Setup your database credential in **.env**
+	- run command **npm install** in your terminal / cmd
+	- run command **adonis migration:run** in your terminal / cmd
+	- run command **adonis serve --dev** in your terminal / cmd
 
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick --api-only
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+3. Rest API collection
+	- https://www.getpostman.com/collections/0ba9b39da115cb00f069
